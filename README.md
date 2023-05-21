@@ -90,7 +90,7 @@ and(y1, i, s0c, s1c);
 and(y2, i, s0, s1c);
 and(y3, i, s0, s1);
 endmodule
-
+```
 ### RTL LOGIC  
 ### MULTIPLEXER
 ![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/74e3ecaf-eeca-4751-ad97-f462a09dfd08)
