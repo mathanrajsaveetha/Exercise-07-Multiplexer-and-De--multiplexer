@@ -68,50 +68,57 @@ RegisterNumber:  212222100003
 ```
 ### 4-1 MULTIPLEXER
 ```
-module mux(i0, i1, i2, i3, s0, s1, y);
-input i0, i1, i2, i3, s0, s1;
+module multi (s0,s1,a0,a1,a2,a3,y);
+input s0,s1,a0,a1,a2,a3;
 output y;
-wire p, q, r, s, s0c, s1c;
-not(s0c, s0);
-nor(s1c, s1);
-and(p, s0c, s1c, i0);
-and(q, s0c, s1, i1);
-and(r, s0, s1c, i2);
-and(s, s0, s1, i3);
-or(y, p, q, r, s);
+wire a,b,c,d,s0bar,s1bar;
+not (s0bar,s0);
+not (s1bar,s1);
+and (a,s0,s1,a3);
+and (b,s0bar,s1,a2);
+and (c,s0,s1bar,a1);
+and (d,s0bar,s1bar,a0);
+or (y,a,b,c,d);
 endmodule
+
 ```
 ### 1-4 DEMULTIPLEXER
 ```
-module demux(y0, y1, y2, y3, s0, s1, i);
-input s0, s1, i;
-output y0, y1, y2, y3;
-wire s0c, s1c;
-nor(s0c, s0);
-nor(s1c, s1);
-and(y0, i, s0c, s1);
-and(y1, i, s0c, s1c);
-and(y2, i, s0, s1c);
-and(y3, i, s0, s1);
+module demul(y0,y1,y2,y3,s0,s1,i);
+input s0,s1,i;
+output y0,y1,y2,y3;
+wire sbar,s1bar;
+nor(sbar,s0);
+nor(s1bar,s1);
+and(y0,i,sbar,s1);
+and(y1,i,sbar,s1bar);
+and(y2,i,s0,s1bar);
+and(y3,i,s0,s1);
 endmodule
 ```
 ### RTL LOGIC  
 ### MULTIPLEXER
-![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/74e3ecaf-eeca-4751-ad97-f462a09dfd08)
+![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/cb9632f9-fcd8-4b9f-a6cd-13d27c7432a0)
+
 ### DEMULTIPLEXER
-![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/2c5aa3de-e595-4272-8b98-d72c80a5bad8)
+![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/cd3b47d6-83d4-4ef9-b62f-5f64777b114d)
 
 ### TIMING DIGRAMS  
 ### MULTIPLEXER
-![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/6d369922-be15-46d9-9b59-c4b2483606c0)
+![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/bdb03324-4611-4efb-aa28-e0ce7de3ffda)
+
 ### DEMULTIPLEXER
-![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/764d4506-8ddf-4277-8c50-77f0d1abc803)
+![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/8465fe90-2484-47ed-8a8f-21be2b8aecb2)
+
+
 
 ### TRUTH TABLE 
 ### MULTIPLEXER
-![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/877a2f4a-7678-479f-924c-2896e8162e6a)
+![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/85a463a0-a60d-4970-a43a-ab2e0031c732)
+
 ### DEMULTIPLEXER
-![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/0d4bfe69-b121-491f-beb8-688a9ac53a0f)
+![image](https://github.com/Aishwarya-sankar/Exercise-07-Multiplexer-and-De--multiplexer/assets/121418444/b60d4916-d602-44d3-9752-38d1bced404a)
+
 
 ### RESULTS 
 Thus the implementation of Multiplexer and Demultiplexer are verified.
