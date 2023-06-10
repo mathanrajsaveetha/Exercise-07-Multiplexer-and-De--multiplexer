@@ -62,8 +62,8 @@ step5: Give the respective inputs for timing diagram and obtain the results.
 ```
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: Aishwarya S
-RegisterNumber:  212222100003
+Developed by: mathan raj E
+RegisterNumber:  212222230079
 */
 ```
 ### 4-1 MULTIPLEXER
